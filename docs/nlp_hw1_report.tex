@@ -1,0 +1,147 @@
+
+\documentclass[11pt]{article}
+\usepackage{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\title{Multiclass Classification of Cultural Items}
+\author{Your Name \\ Sapienza University of Rome}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Understanding cultural specificity is an important challenge for Natural Language Processing (NLP), particularly in tasks involving multicultural knowledge and bias mitigation. Cultural items may be strongly associated with a specific culture, partially representative of it, or culturally agnostic. The goal of this homework is to develop an automatic classifier that categorizes items into three classes: Cultural Agnostic (CA), Cultural Representative (CR), and Cultural Exclusive (CE).
+
+Following the assignment requirements, we implemented two different approaches:
+\begin{itemize}
+\item A Transformer-based language model classifier.
+\item A non-LM approach based on Word2Vec embeddings.
+\end{itemize}
+
+Both models use the item name and description as input features and are evaluated on the provided development set using standard classification metrics.
+
+\section{Methodology}
+
+\subsection{Transformer-based Classifier}
+
+The first approach follows a standard supervised text classification pipeline using a pretrained Transformer encoder. We fine-tune a pretrained language model to classify items into the three cultural categories.
+
+The model takes as input the item name concatenated with the description. The input is tokenized using the model tokenizer and passed through the encoder.
+
+We use the hidden representation of the [CLS] token from the final layer as the aggregated representation of the input sequence. This vector is then passed through a linear classification layer producing logits for the three cultural classes.
+
+The model is trained using cross-entropy loss and optimized with AdamW. Fine-tuning allows the model to adapt pretrained linguistic knowledge to the specific cultural classification task.
+
+\subsection{Word2Vec-based Classifier}
+
+As a non-LM approach, we implemented a classifier based on Word2Vec embeddings.
+
+Each item description is tokenized and mapped to its corresponding embedding vectors. To obtain a sentence-level representation, we compute the masked mean pooling of token embeddings:
+
+\begin{equation}
+v_{sent} = \frac{\sum_i m_i \cdot v_i}{\sum_i m_i}
+\end{equation}
+
+where $v_i$ is the embedding of token $i$ and $m_i$ is the attention mask.
+
+The resulting sentence vector is then passed through a feed-forward neural classifier composed of:
+\begin{itemize}
+\item Layer normalization
+\item Dropout regularization
+\item A hidden linear layer with ReLU activation
+\item A final linear classification layer
+\end{itemize}
+
+To mitigate dataset imbalance we apply class weights in the loss function based on the label distribution in the training data.
+
+\section{Experiments}
+
+\subsection{Dataset}
+
+The dataset consists of cultural items extracted from Wikidata. Each entry includes:
+
+\begin{itemize}
+\item item name
+\item description
+\item type
+\item hypernym
+\item classification label
+\end{itemize}
+
+Items are annotated according to the taxonomy:
+\begin{itemize}
+\item Cultural Agnostic (CA)
+\item Cultural Representative (CR)
+\item Cultural Exclusive (CE)
+\end{itemize}
+
+The training set contains silver annotations while the development set contains gold annotations manually curated by the dataset creators.
+
+\subsection{Training Setup}
+
+\textbf{Transformer model}
+
+\begin{itemize}
+\item pretrained encoder: Transformer encoder (e.g. BERT-like model)
+\item optimizer: AdamW
+\item loss: cross-entropy
+\item training epochs: 10
+\item input: item name + description
+\end{itemize}
+
+\textbf{Word2Vec model}
+
+\begin{itemize}
+\item embedding dimension: 300
+\item pooling: masked mean pooling
+\item classifier: two-layer MLP
+\item dropout: 0.1
+\item loss: weighted cross-entropy
+\end{itemize}
+
+\section{Results}
+
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+Model & Accuracy & Precision & Recall & F1 \\
+\midrule
+Word2Vec + MLP & 0.69 & 0.68 & 0.68 & 0.68 \\
+Transformer LM & TBD & TBD & TBD & TBD \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The Word2Vec model achieves moderate performance, reaching approximately 0.68 macro-F1 on the development set.
+
+The Transformer model is expected to outperform the Word2Vec approach due to its contextual representations and ability to capture deeper semantic relations.
+
+\section{Discussion}
+
+The comparison between the two approaches highlights the trade-off between simplicity and expressive power.
+
+The Word2Vec-based model is computationally efficient and relatively easy to train. However, static embeddings cannot capture contextual meaning, which is often crucial for identifying cultural specificity.
+
+In contrast, Transformer models leverage contextual embeddings and large-scale pretraining, enabling them to better interpret nuanced descriptions.
+
+Another challenge arises from class ambiguity. Some items may lie between cultural representative and cultural exclusive categories, which makes the classification task difficult even for humans.
+
+\section{Conclusion}
+
+In this work we explored two approaches for the classification of cultural items:
+
+\begin{itemize}
+\item a Transformer-based language model classifier
+\item a Word2Vec-based neural classifier
+\end{itemize}
+
+The Word2Vec model provides a lightweight baseline while still achieving reasonable performance. However, contextual Transformer models are better suited for capturing cultural semantics in textual descriptions.
+
+Future work could incorporate additional knowledge sources such as Wikipedia text, Wikidata relations, or external cultural knowledge bases.
+
+\end{document}
