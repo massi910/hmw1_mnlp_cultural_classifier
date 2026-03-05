@@ -1,0 +1,35 @@
+hydra:
+  verbose: true
+
+device_name: auto # auto|cpu|cuda
+
+version: v1.0.0
+
+# the huggingface dataset name
+hf_source_dataset_name: sapienzanlp/nlp2025_hw1_cultural_dataset
+
+# tokenizer max sequence length
+max_seq_len: 64
+
+num_labels: 3
+
+# training configuration
+output_dir: out/train/w2v/${version}/
+batch_size: 16
+learning_rate: 0.00003
+num_epochs: 10
+
+model_input_keys:
+  - embeddings
+  - attention_mask
+
+
+defaults:
+  - _self_
+  - setup
+  - model: w2v_cultural_model
+  - dataset@train_dataset: train_w2v_cultural_dataset
+  - dataset@validation_dataset: validation_w2v_cultural_dataset
+  - collator: w2v_collator
+  - trainer: w2v_cultural_trainer
+  - predictor: cultural_predictor

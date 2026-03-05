@@ -1,0 +1,39 @@
+hydra:
+  verbose: true
+
+device_name: auto # auto|cpu|cuda
+
+version: v2.0.0
+
+# the huggingface dataset name
+hf_source_dataset_name: sapienzanlp/nlp2025_hw1_cultural_dataset
+
+# tokenizer max sequence length
+max_seq_len: 128
+
+# model configuration
+model_name: distilbert-base-uncased
+tokenizer_pretrained_name: distilbert-base-uncased
+num_labels: 3
+
+# training configuration
+output_dir: out/train/${version}/
+batch_size: 100
+learning_rate: 0.00003
+num_epochs: 20
+
+model_input_keys:
+  - input_ids
+  - attention_mask
+
+
+defaults:
+  - _self_
+  - setup
+  - tokenizer: distil_bert_tokenizer
+  - model_config: llm_cultural_config
+  - model: llm_cultural_model
+  - dataset@train_dataset: train_llm_cultural_dataset
+  - dataset@validation_dataset: validation_llm_cultural_dataset
+  - trainer: cultural_trainer
+  - predictor: cultural_predictor

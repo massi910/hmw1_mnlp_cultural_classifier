@@ -1,0 +1,5 @@
+_target_: HMW1_2025.dataset.llm_cultural_dataset.LlmCulturalDataset
+source_dataset_name: ${hf_source_dataset_name}
+tokenizer: ${tokenizer}
+split: train
+hf_key: ${hf_key}

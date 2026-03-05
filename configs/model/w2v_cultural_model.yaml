@@ -1,0 +1,2 @@
+_target_: HMW1_2025.model.w2v_cultural_model.W2VCulturalModel
+num_labels: ${num_labels}

@@ -1,0 +1,5 @@
+_target_: HMW1_2025.prediction.cultural_predictor.CulturalPredictor
+model: ${model}
+device_name: ${device_name}
+max_seq_len: ${max_seq_len}
+model_input_keys: ${model_input_keys}

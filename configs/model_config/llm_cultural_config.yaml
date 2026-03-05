@@ -1,0 +1,3 @@
+_target_: HMW1_2025.model.llm_cultural_model.LlmCulturalConfig
+num_labels: ${num_labels}
+pretrained_name: ${pretrained_name}
