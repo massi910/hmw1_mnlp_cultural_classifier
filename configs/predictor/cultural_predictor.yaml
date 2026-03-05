@@ -1,4 +1,4 @@
-_target_: HMW1_2025.prediction.cultural_predictor.CulturalPredictor
+_target_: hmw1_mnlp_cultural_classifier.prediction.cultural_predictor.CulturalPredictor
 model: ${model}
 device_name: ${device_name}
 max_seq_len: ${max_seq_len}

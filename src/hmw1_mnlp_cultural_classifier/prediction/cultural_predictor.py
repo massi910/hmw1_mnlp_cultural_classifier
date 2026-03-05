@@ -5,8 +5,8 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 
-from HMW1_2025.labels_schema.cultural_labels import CulturalLabels
-from HMW1_2025.utils.device import resolve_device
+from hmw1_mnlp_cultural_classifier.labels_schema.cultural_labels import CulturalLabels
+from hmw1_mnlp_cultural_classifier.utils.device import resolve_device
 
 
 class CulturalPredictor:

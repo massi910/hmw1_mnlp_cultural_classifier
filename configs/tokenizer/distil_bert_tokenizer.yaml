@@ -1,3 +1,3 @@
-_target_: HMW1_2025.tokenizer.distil_bert_tokenizer.DistilBertTokenizer
+_target_: hmw1_mnlp_cultural_classifier.tokenizer.distil_bert_tokenizer.DistilBertTokenizer
 tokenizer_pretrained_name: distilbert-base-uncased
 max_seq_len: ${max_seq_len}

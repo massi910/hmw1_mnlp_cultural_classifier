@@ -6,9 +6,9 @@ import torch
 from torch import Tensor
 from torch.utils.data import DataLoader
 
-from HMW1_2025.labels_schema.cultural_labels import CulturalLabels
-from HMW1_2025.utils.debugger import Debugger
-from HMW1_2025.utils.device import resolve_device
+from hmw1_mnlp_cultural_classifier.labels_schema.cultural_labels import CulturalLabels
+from hmw1_mnlp_cultural_classifier.utils.debugger import Debugger
+from hmw1_mnlp_cultural_classifier.utils.device import resolve_device
 
 
 class W2VCulturalTrainer(Debugger):

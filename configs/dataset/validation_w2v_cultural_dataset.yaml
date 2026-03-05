@@ -1,4 +1,4 @@
-_target_: HMW1_2025.dataset.w2v_cultural_dataset.W2VCulturalDataset
+_target_: hmw1_mnlp_cultural_classifier.dataset.w2v_cultural_dataset.W2VCulturalDataset
 source_dataset_name: ${hf_source_dataset_name}
 split: validation
 hf_key: ${hf_key}

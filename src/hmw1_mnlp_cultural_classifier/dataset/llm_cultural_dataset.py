@@ -3,8 +3,8 @@ from typing import Dict, Any
 import torch
 from torch import Tensor
 
-from HMW1_2025.dataset.cultural_dataset import CulturalDataset
-from HMW1_2025.tokenizer.base_tokenizer import BaseTokenizer
+from hmw1_mnlp_cultural_classifier.dataset.cultural_dataset import CulturalDataset
+from hmw1_mnlp_cultural_classifier.tokenizer.base_tokenizer import BaseTokenizer
 
 
 class LlmCulturalDataset(CulturalDataset):

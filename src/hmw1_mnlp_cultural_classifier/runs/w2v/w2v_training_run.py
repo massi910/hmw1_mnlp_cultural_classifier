@@ -4,7 +4,7 @@ import hydra
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 
-from HMW1_2025.training.cultural_trainer import CulturalTrainer
+from hmw1_mnlp_cultural_classifier.training.cultural_trainer import CulturalTrainer
 
 os.environ["HYDRA_FULL_ERROR"] = "1"
 

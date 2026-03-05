@@ -6,11 +6,11 @@ from typing import Dict
 
 import torch
 
-from HMW1_2025.dataset.cultural_dataset import CulturalDataset
-from HMW1_2025.dataset.text_builder import CulturalTextBuilder
-from HMW1_2025.embedder.w2v_embedder import W2VEmbedder
-from HMW1_2025.labels_schema.cultural_labels import CulturalLabels
-from HMW1_2025.tokenizer.simple_tokenizer import SimpleTokenizer
+from hmw1_mnlp_cultural_classifier.dataset.cultural_dataset import CulturalDataset
+from hmw1_mnlp_cultural_classifier.dataset.text_builder import CulturalTextBuilder
+from hmw1_mnlp_cultural_classifier.embedder.w2v_embedder import W2VEmbedder
+from hmw1_mnlp_cultural_classifier.labels_schema.cultural_labels import CulturalLabels
+from hmw1_mnlp_cultural_classifier.tokenizer.simple_tokenizer import SimpleTokenizer
 
 
 class W2VCulturalDataset(CulturalDataset):

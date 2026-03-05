@@ -4,11 +4,11 @@ import hydra
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 
-from HMW1_2025.dataset.cultural_dataset import CulturalDataset
-from HMW1_2025.dataset.w2v_cultural_dataset import W2VCulturalDataset
-from HMW1_2025.model.w2v_cultural_model import W2VCulturalModel
-from HMW1_2025.prediction.cultural_predictor import CulturalPredictor
-from HMW1_2025.utils.device import resolve_device
+from hmw1_mnlp_cultural_classifier.dataset.cultural_dataset import CulturalDataset
+from hmw1_mnlp_cultural_classifier.dataset.w2v_cultural_dataset import W2VCulturalDataset
+from hmw1_mnlp_cultural_classifier.model.w2v_cultural_model import W2VCulturalModel
+from hmw1_mnlp_cultural_classifier.prediction.cultural_predictor import CulturalPredictor
+from hmw1_mnlp_cultural_classifier.utils.device import resolve_device
 
 os.environ["HYDRA_FULL_ERROR"] = "1"
 

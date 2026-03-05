@@ -4,8 +4,8 @@ import hydra
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 
-from HMW1_2025.dataset.cultural_dataset import CulturalDataset
-from HMW1_2025.prediction.cultural_predictor import CulturalPredictor
+from hmw1_mnlp_cultural_classifier.dataset.cultural_dataset import CulturalDataset
+from hmw1_mnlp_cultural_classifier.prediction.cultural_predictor import CulturalPredictor
 
 os.environ["HYDRA_FULL_ERROR"] = "1"
 

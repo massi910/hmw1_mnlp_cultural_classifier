@@ -1,4 +1,4 @@
-_target_: HMW1_2025.dataset.llm_cultural_dataset.LlmCulturalDataset
+_target_: hmw1_mnlp_cultural_classifier.dataset.llm_cultural_dataset.LlmCulturalDataset
 source_dataset_name: ${hf_source_dataset_name}
 tokenizer: ${tokenizer}
 split: train

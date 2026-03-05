@@ -4,7 +4,7 @@ from datasets import load_dataset
 from huggingface_hub import login
 from torch.utils.data import Dataset
 
-from HMW1_2025.labels_schema.cultural_labels import CulturalLabels
+from hmw1_mnlp_cultural_classifier.labels_schema.cultural_labels import CulturalLabels
 
 logging.getLogger("httpcore").setLevel(logging.WARNING)
 logging.getLogger("httpx").setLevel(logging.WARNING)

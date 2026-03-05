@@ -6,10 +6,10 @@ import torch
 from torch import Tensor
 from torch.utils.data import DataLoader
 
-from HMW1_2025.dataset.llm_cultural_dataset import LlmCulturalDataset
-from HMW1_2025.model.llm_cultural_model import LlmCulturalModel
-from HMW1_2025.utils.debugger import Debugger
-from HMW1_2025.utils.device import resolve_device
+from hmw1_mnlp_cultural_classifier.dataset.llm_cultural_dataset import LlmCulturalDataset
+from hmw1_mnlp_cultural_classifier.model.llm_cultural_model import LlmCulturalModel
+from hmw1_mnlp_cultural_classifier.utils.debugger import Debugger
+from hmw1_mnlp_cultural_classifier.utils.device import resolve_device
 
 
 class CulturalTrainer(Debugger):

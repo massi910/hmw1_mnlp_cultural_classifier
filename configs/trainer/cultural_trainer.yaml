@@ -1,4 +1,4 @@
-_target_: HMW1_2025.training.cultural_trainer.CulturalTrainer
+_target_: hmw1_mnlp_cultural_classifier.training.cultural_trainer.CulturalTrainer
 model: ${model}
 train_dataset: ${train_dataset}
 validation_dataset: ${validation_dataset}

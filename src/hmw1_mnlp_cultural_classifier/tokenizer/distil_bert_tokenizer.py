@@ -1,6 +1,6 @@
 from transformers import DistilBertTokenizerFast
 
-from HMW1_2025.tokenizer.base_tokenizer import BaseTokenizer
+from hmw1_mnlp_cultural_classifier.tokenizer.base_tokenizer import BaseTokenizer
 
 
 class DistilBertTokenizer(BaseTokenizer):

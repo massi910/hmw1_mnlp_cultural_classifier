@@ -1,10 +1,10 @@
 from huggingface_hub import login
 from transformers import AutoTokenizer
 
-from HMW1_2025.model.llm_cultural_model import LlmCulturalModel
+from hmw1_mnlp_cultural_classifier.model.llm_cultural_model import LlmCulturalModel
 
 model_path = "/HMW1_2025/runs/out/train/v1.0.0/model"
-repo_name = "massi910/cultural_model_test"
+repo_name = ""
 
 login("x")
 

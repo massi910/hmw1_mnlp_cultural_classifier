@@ -1,12 +1,12 @@
 import os
 
-from HMW1_2025.dataset.cultural_dataset import CulturalDataset
-from HMW1_2025.dataset.llm_cultural_dataset import LlmCulturalDataset
-from HMW1_2025.model import CulturalModel
-from HMW1_2025.model.llm_cultural_model import LlmCulturalModel
-from HMW1_2025.prediction.cultural_predictor import CulturalPredictor
-from HMW1_2025.tokenizer.base_tokenizer import BaseTokenizer
-from HMW1_2025.tokenizer.distil_bert_tokenizer import DistilBertTokenizer
+from hmw1_mnlp_cultural_classifier.dataset.cultural_dataset import CulturalDataset
+from hmw1_mnlp_cultural_classifier.dataset.llm_cultural_dataset import LlmCulturalDataset
+from hmw1_mnlp_cultural_classifier.model import CulturalModel
+from hmw1_mnlp_cultural_classifier.model.llm_cultural_model import LlmCulturalModel
+from hmw1_mnlp_cultural_classifier.prediction.cultural_predictor import CulturalPredictor
+from hmw1_mnlp_cultural_classifier.tokenizer.base_tokenizer import BaseTokenizer
+from hmw1_mnlp_cultural_classifier.tokenizer.distil_bert_tokenizer import DistilBertTokenizer
 
 os.environ["HYDRA_FULL_ERROR"] = "1"
 
